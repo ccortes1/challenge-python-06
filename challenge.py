@@ -3,7 +3,9 @@ def make_division_by(n):
        of an x number by n 
     """
     # You have to code here!
-    pass
+    def division(x):
+        return x/n
+    return division
 
 
 def run():
@@ -23,6 +25,9 @@ if __name__ == '__main__':
     class ClosureSuite(unittest.TestCase):
         def test_closure_make_division_by(self):
             # Make the closure test here
-            pass
-
+            num = {6:[3,18], 20:[5,100], 3:[18,54]}
+            for key, value in num.items():
+                division = make_division_by(value[0])
+                self.assertEqual(division(value[1]), key)
+    
     run()
